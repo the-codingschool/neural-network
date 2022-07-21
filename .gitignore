@@ -38,5 +38,8 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
+<<<<<<< HEAD
 # R project file
+=======
+>>>>>>> 3cd6a7138f516306c2ad1d26a8bb2949d7939fe4
 *.Rproj
