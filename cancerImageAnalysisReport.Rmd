@@ -1,0 +1,61 @@
+AN APPLICATION OF NEURAL NETWORKS TO HISTOPATHOLOGICAL IMAGE ANALYSIS: IDENTIFYING A LOCAL PEAK IN ACCURACY
+
+Analysis by Kaelyn Johnson
+
+**Abstract**
+
+The National Institute of Health estimates that there will be 1.9 million new cases of cancer in America in 2022. Biopsy followed by histopathological analysis will be the primary tool used for diagnosis in the majority of these cases.  Improvements to the efficiency, speed, and cost of this diagnostic process have the potential to enhance both the quality and cost of healthcare. One of the most promising new avenues available to improve the diagnostic process is the application of machine learning and especially neural networks to histopathological image analysis.In this study, we utilize a histopathological data set for endometrial disease diagnosis (developed by Zeng et al, 2018) and seek to develop a basic predictive neural network based model.  Our primary objective was to optimize the model’s accuracy over three key input parameters (momentum, learning rate and training batch size), identifying a local peak for the models accuracy. After experimentation, we created a model that reached 52% accuracy after 50 epochs, at a learning rate of 0.01, a momentum of 0.6, and a batch size of 64.
+
+**Background**
+
+In this study, we utilize a histopathological data set for endometrial disease diagnosis (developed by Zeng et al, 2018). This dataset contains over 3300 (JPEG) images derived from about 500 endometrial specimens stained with hematoxylin and eosin (H&E), each of which sorted into the following seven categories:
+
+* normal endometrial tissue in the luteal phase
+* normal endometrial tissue in the mentstrual phase
+* normal endometrial tissue in the follicular phase
+* endometrial polyp tissue
+* simple hyperplasia tissue without atypia
+* complex hyperplasia tissue without atypia
+* endometrioid adenocarcinoma tissue
+
+**Procedure**
+
+I altered an existing pytorch neural network based on the mscii database in Google Colab recommended to me by my mentor. I then loaded the data into the neural network and filtered each image so they were all 100 by 100 pixels.
+
+**Research Question**
+
+Which set of neural network perameters yield the highest accuracy?
+
+**Hypotheses**
+
+Null: The peramaters of the neural network do not impact its accuracy whatsoever.
+
+Alternate: Altering the perameters of the neural network causes a profound difference in the results of the network.
+
+**Figure 1:**
+
+!['Figure 4'](~/data-science-practice/Images/momentumgraph.png)
+This scatter plot shows the momentum of the neural network (x-axis) against the moving accuracy of the last five periods of the neural network after 30 epochs (y-axis). Each data point on this graph was run at learning rate = 0.01 and batch size = 64. The two highest accuracy points (momentum = 0.06, 0.675) are marked by blue stars, and general range of the momentums which yielded the highest accuracy are highlighted by the blue bar.
+
+**Figure 2:**
+
+!['Figure 4'](~/data-science-practice/Images/learningrategraph.png)
+This scatter plot shows the natural logs of learning rates of the neural network (x-axis) against the moving accuracy of the last five periods of the neural network after 30 epochs (y-axis). Each data point on this graph was run at momentum = 0.6 and batch size = 64. The three highest accuracy points (learning rate = 0.01, 0.02, 0.03) are marked by blue stars, and general range of the learning rates which yielded the highest accuracy are highlighted by the blue bar.
+
+**Figure 3:**
+
+!['Figure 4'](~/data-science-practice/Images/batchsizegraph.png)
+This scatter plot shows the batch sizes of the neural network (x-axis) against the moving accuracy of the last five periods of the neural network after 30 epochs (y-axis). Each data point on this graph was run at learning rate = 0.01 and momentum = 0.6. The three highest accuracy points (batch size = 32, 40, 50) are marked by blue stars, and general range of the momentums which yielded the highest accuracy are highlighted by the blue bar.
+
+**Figure 4**
+
+!['Figure 4'](~/data-science-practice/Images/finalgraph.png)
+This line plot follows the neural network's (learning rate = 0.01, momentum = 0.6, batch size = 64, epochs = 50) growth in accuracy over epochs compared to the accuracy of randomly guessing which category an image belongs to (1/7). It is clear that the accuracy of the neural network far outperforms randomly guessing, reaching a high ending accuracy of 52%.
+
+**Conclusion**
+From my research, it is evident that a neural network is capable of identifying categories of tissue with some degree of accuracy. In the future, it may be possible to reach an accuracy and consistency that is high enough for commercial medical use, greatly decreasing both time and monetary constraints on receiving treatment for cancer and other diseases. If I had more time on this project, I would experiment more with the peramaters of the neural network. Though I found one local minima, it is unlikely to be the global minima, so the neural network is probably capable of a much higher accuracy than 52%. Additionally, I would like to have experimented with
+
+**Code and Data Availability**
+
+['Link to study'](https://figshare.com/articles/dataset/A_histopathological_image_dataset_for_endometrial_disease_diagnosis/7306361)
+['Link to Github Repo'](https://github.com/the-codingschool/neural-network/tree/dev-Kaelyn)
