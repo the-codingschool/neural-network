@@ -1,6 +1,6 @@
-AN APPLICATION OF NEURAL NETWORKS TO HISTOPATHOLOGICAL IMAGE ANALYSIS: IDENTIFYING A LOCAL PEAK IN ACCURACY
+# AN APPLICATION OF NEURAL NETWORKS TO HISTOPATHOLOGICAL IMAGE ANALYSIS: IDENTIFYING A LOCAL PEAK IN ACCURACY
 
-Analysis by Kaelyn Johnson
+#### Analysis by Kaelyn Johnson
 
 **Abstract**
 
@@ -58,5 +58,5 @@ From this research, it is evident that a neural network is capable of identifyin
 
 **Code and Data Availability**
 
-['Link to study'](https://figshare.com/articles/dataset/A_histopathological_image_dataset_for_endometrial_disease_diagnosis/7306361)
-['Link to Github Repo'](https://github.com/the-codingschool/neural-network/tree/dev-Kaelyn)
+* ['Link to study'](https://figshare.com/articles/dataset/A_histopathological_image_dataset_for_endometrial_disease_diagnosis/7306361)
+* ['Link to Github Repo'](https://github.com/the-codingschool/neural-network/tree/dev-Kaelyn)
