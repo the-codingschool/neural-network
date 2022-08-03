@@ -34,22 +34,22 @@ Alternate: Altering the parameters of the neural network causes a profound diffe
 
 **Figure 1:**
 
-!['Figure 4'](~/data-science-practice/Images/momentumgraph.png)
+![momentumgraph](https://user-images.githubusercontent.com/108104934/182682463-673c0c70-777e-41c7-ba2e-c5613df03e7d.PNG)
 This scatter plot shows the momentum of the neural network (x-axis) against the moving accuracy of the last five periods of the neural network after 30 epochs (y-axis). Each data point on this graph was run at learning rate = 0.01 and batch size = 64. The two highest accuracy points (momentum = 0.06, 0.675) are marked by blue stars, and general range of the momentums which yielded the highest accuracy are highlighted by the blue bar.
 
 **Figure 2:**
 
-!['Figure 4'](~/data-science-practice/Images/learningrategraph.png)
+![learningrategraph](https://user-images.githubusercontent.com/108104934/182682502-a3fe00a5-c3a4-4c3e-8113-cf0b8df53d46.PNG)
 This scatter plot shows the natural logs of learning rates of the neural network (x-axis) against the moving accuracy of the last five periods of the neural network after 30 epochs (y-axis). Each data point on this graph was run at momentum = 0.6 and batch size = 64. The three highest accuracy points (learning rate = 0.01, 0.02, 0.03) are marked by blue stars, and general range of the learning rates which yielded the highest accuracy are highlighted by the blue bar.
 
 **Figure 3:**
 
-!['Figure 4'](~/data-science-practice/Images/batchsizegraph.png)
+![batchsizegraph](https://user-images.githubusercontent.com/108104934/182682524-dd79c5d9-b9c3-4bc9-ba0c-ef948425da79.PNG)
 This scatter plot shows the batch sizes of the neural network (x-axis) against the moving accuracy of the last five periods of the neural network after 30 epochs (y-axis). Each data point on this graph was run at learning rate = 0.01 and momentum = 0.6. The three highest accuracy points (batch size = 32, 40, 50) are marked by blue stars, and general range of the momentums which yielded the highest accuracy are highlighted by the blue bar.
 
 **Figure 4**
 
-!['Figure 4'](~/data-science-practice/Images/finalgraph.png)
+![finalgraph](https://user-images.githubusercontent.com/108104934/182682561-3ef6ced0-f47e-4e01-8ad1-292f73f51511.PNG)
 This line plot follows the neural network's (learning rate = 0.01, momentum = 0.6, batch size = 64, epochs = 50) growth in accuracy over epochs compared to the accuracy of randomly guessing which category an image belongs to (1/7). It is clear that the accuracy of the neural network far outperforms randomly guessing, reaching a high ending accuracy of 52%.
 
 **Conclusion**
