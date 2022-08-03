@@ -20,17 +20,17 @@ In this study, we utilize a histopathological data set for endometrial disease d
 
 **Procedure**
 
-I altered an existing pytorch neural network based on the mscii database in Google Colab recommended to me by my mentor. I then loaded the data into the neural network and filtered each image so they were all 100 by 100 pixels.
+I altered an existing pytorch neural network based on the MNIST database in Google Colab recommended to me by my mentor. Then, I loaded the cancer data into the code and filtered each image so they were all 100 by 100 pixels. I changed the structure of the neural network according to my mentor's advice, adding more layers of convolution. Lastly, I began to experiment with values of parameters within certain recommended ranges. I ran dozens of experiments to find my initial values, then ran more experiments to find the optimal values of learning rate, momentum, and batch size to try to find the local minima. For each experiment, I kept two parameters stable while changing the third to examine the effect of the third on the model. Lastly, I ran an "optimal" model to test and find what level of accuracy my model could reach.
 
 **Research Question**
 
-Which set of neural network perameters yield the highest accuracy?
+Which set of neural network parameters yield the highest accuracy?
 
 **Hypotheses**
 
-Null: The peramaters of the neural network do not impact its accuracy whatsoever.
+Null: The paramaters of the neural network do not impact its accuracy whatsoever.
 
-Alternate: Altering the perameters of the neural network causes a profound difference in the results of the network.
+Alternate: Altering the parameters of the neural network causes a profound difference in the results of the network.
 
 **Figure 1:**
 
@@ -53,7 +53,8 @@ This scatter plot shows the batch sizes of the neural network (x-axis) against t
 This line plot follows the neural network's (learning rate = 0.01, momentum = 0.6, batch size = 64, epochs = 50) growth in accuracy over epochs compared to the accuracy of randomly guessing which category an image belongs to (1/7). It is clear that the accuracy of the neural network far outperforms randomly guessing, reaching a high ending accuracy of 52%.
 
 **Conclusion**
-From my research, it is evident that a neural network is capable of identifying categories of tissue with some degree of accuracy. In the future, it may be possible to reach an accuracy and consistency that is high enough for commercial medical use, greatly decreasing both time and monetary constraints on receiving treatment for cancer and other diseases. If I had more time on this project, I would experiment more with the peramaters of the neural network. Though I found one local minima, it is unlikely to be the global minima, so the neural network is probably capable of a much higher accuracy than 52%. Additionally, I would like to have experimented with
+From this research, it is evident that a neural network is capable of identifying categories of tissue with some degree of accuracy. This study likely identified one local minima for the neural network’s loss function (constraining the neural network model’s input variation to the three parameters analysed). However it is possible, and even likely, that the peak accuracy found in this study is not the global minima. Additional improvements to the model and further computational analysis would likely yield an accuracy higher than 52%. As a result, in the future, it may be possible for a neural network to achieve an accuracy and consistency high enough for commercial medical use, greatly decreasing both time and monetary constraints on the medical industry and improving care. 
+
 
 **Code and Data Availability**
 
