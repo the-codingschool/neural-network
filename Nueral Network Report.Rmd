@@ -1,0 +1,61 @@
+---
+title: "Endometrial Specimen Analysis: Differentiating cells by cell morphology and other characteristics"
+author: "Anand Nair"
+date: "2022-08-07"
+output: html_document
+---
+
+**Abstract**
+
+The neural network research project was focused on endometrial cancer pathology with each team member in the group with different research goals. Difficulty in identifying endometrial cancer by manual analysis of the endometrial cancer pathology slides is one of the major bottle neck in cancer diagnosis and treatment. Until machines are able to distinguish normal cells from cancerous ones, humans are left with reviewing each and every pathology slide which would be efficiently done by a professional but the process is very slow. The goal of the research was to use machine learning techniques to solve the speed problem while being really accurate. The algorithm is not biased about the images that are fed to them, so the machine had to accept the images, store them in a separate folder in its database, and to test for the epoch's accuracies and errors. The results came from finishing the machine's accuracy testing, which the machine tested 56% accuracy for the epochs. This results of the current study were not optimized enough to determine whether the algorithm can differentiate cancer cells from normal cells because of the high error rates. In conclusion, the machine learning protocol is definitely capable enough to determine the pathology of any sample by continuously running through epochs to test for a higher epoch accuracy number and a low error number.
+
+**Introduction**
+
+*Machine Learning Research Question and Hypothesis* 
+
+Research Question:
+Can the machine distinguish and track the number of cancer cells to normal cells in each specimen to find a correlation with the described pathology of a patient with endometrial cancer?
+
+Hypothesis:
+By using machine learning, the subjectively in cancer diagnosis can be reduced by achieving reliable and reproducible image review.
+ 
+*Background*
+
+Digital pathology using machine learning can be very critical and important because it allows for efficient faster decision making and data analysis. The analysis of endometrial cancer is significant research because if the cancer can be detected at an early stage the patient can be treated but when found too late, the cancer would have spread too far in the body to be removed with surgery. The current research data comes from a histopathological image dataset for ET provided on figshare:
+[Figshare](https://figshare.com/articles/dataset/A_histopathological_image_dataset_for_endometrial_disease_diagnosis/7306361)
+
+The current project utilized MNIST ("Modified National Institute of Standards and Technology"), which is the de facto “hello world” dataset of computer vision. Since its release in 1999, this classic dataset of handwritten images has served as the basis for benchmarking classification algorithms.
+
+The code for this projct was adopted from the pytorch examples repository. It is licensed under BSD 3-Clause "New" or "Revised" License.
+Source: https://github.com/pytorch/examples/ LICENSE: https://github.com/pytorch/examples/blob/master/LICENSE
+
+At the start, the machine was unable to recognize the histopathological images, because the images weren't in an acceptable path for the machine. The approach was a change in the directory from the original data set folder into a separate folder that's in the computer's database. During the change of the data set directory, in the code alterations were made to crop all the images into a 64 y 64 pixel frame.
+After the images were cropped and the directory was switched the machine could access the images to run accuracies and error rates on the epoch easier. The first step before the epochs had ran was to add convolution layers to the module that defines nn. For context, epochs are a complete run of the training dataset passing an algorithm and convolution layers are operations typically used to convert pixels into a field of a single value to run through. By adding more convolution layers to the module results will be passed on epoch after epoch till the machine couldn't run any more epochs.
+Next the epochs had to be processed and tested for multiple accuracies until there was an accuracy higher than 60 and nothing below. 
+
+**Results: Figures & Findings**
+
+Even though the epochs ran a moderate number of times, the produced accuracies/results by the machine were insufficient to fulfill the requirements needed to fulfill the research question or the hypothesis. The machine produced accuracies that increased to 56% and this meant that the machine was to be accurate half of the time from running the epochs. Idealistically the machine needs to produce more bigger accuracies to produce some visualizations. The interesting findings computed by the machine was machines conversion of regular sized specimen images to be cropped of cell visualization.
+
+```{r}
+
+knitr::include_graphics('./original1.jpg')
+
+knitr::include_graphics('./cropped1.jpg')
+
+knitr::include_graphics('./original11.jpg')
+
+knitr::include_graphics('./cropped11.jpg')
+
+knitr::include_graphics('./original21.jpg')
+
+knitr::include_graphics('./cropped21.jpg')
+
+```
+**Conclusion**
+
+With the conclusion of the research of endometrial cancer machine learning has proven that machines can familiarize itself with images that may be unrecognizable from the start. Not only familiarizing with images has the machine accomplished, but after processing the huge dataset of images the machine became quicker to analyze those images quicker whenever Google colaboratory has to restart. Throughout this project there were a lot of different milestones were accomplished but there were some that just didn't happen unfortunately. If a continuation of this project could happen there would need to be more testing with momentum in the code, to add more convolution layers, and to run through the epochs until a sufficient accuracy and error can be made. There would also be a part of that time to experiment with different variables and test if a higher accuracy is still possible, which will lead to producing more data to make many visualizations. Machine learning has taught many variable lessons that demonstrate why its usefulness is becoming more and more integrated in our daily lives. As humans continue to integrate machines in our lives it is important to use its' advantages to be an aid in challenging obstacles of the medical fields with diseases like endometrial cancer needing attention that is not deserved.
+
+**GIT Repository**
+Link to the git repository:
+(GIT)[https://github.com/the-codingschool/neural-network]
