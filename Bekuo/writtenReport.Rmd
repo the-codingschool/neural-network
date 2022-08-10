@@ -1,0 +1,54 @@
+---
+title: "Cancer Recognition Using Neural Networks"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+#### Analysis by Bekuochukwu Uzo-Menkiti
+<br>
+
+#### **Abstract**
+
+It is well known that Cancer is one of the leading causes of death not just in the United States, but in the world in general. With about 18.1 million cases of Cancer reported in 2020, cancer detection becomes vital as many Cancers are better treated and patients have a higher survival rate when Cancer is detected earlier. My research focuses on the not only detecting whether there is cancer or not, but also categorizing the type of Cancer. The algorithm used functions through a Neural Network that initially received an input of written numbers, but now modified to accept pictures of cancerous/non-cancerous cells. Within the code are variables such as Epochs, Momentum, Learning Rate, and Function. The Epoch is the number of times the Network runs through the data. The Momentum is the moving average of the gradient, and the Learning Rate is how fast it will descend. I decided to focus on Epochs because it made sense that the more times the Network goes through the data, the better the accuracy will become. After running trials, the highest accuracy was 32%.
+<br>
+
+#### **Background**
+
+This dataset is called *A Histopathological Image Dataset for Endometrial Disease Diagnosis*, taken from Figshare. It contains over 3300 images and was collected in China.
+<br>
+
+#### **Hypothesis**
+
+Null: There is no significance between Epochs and accuracy of the model
+
+Alternate: The Epoch greatly affects the accuracy of the Neural Network
+<br>
+
+#### **Figure 1: Accuracy of the model with respect to Epochs**
+
+```{r echo = F, message=FALSE}
+library(ggplot2)
+
+library(dplyr)
+
+data <- read.csv("~/DataScienceResearch/neural-network/Bekuo/Data - Sheet1.csv")
+View(data)
+
+# Save R object as a file
+saveRDS(data, "~/DataScienceResearch/neural-network/Bekuo/data.RDS")
+
+ggplot(data = data, aes(x = Epoch, y = Accuracy)) +
+  geom_line(stat = "summary",
+            fun = "mean")
+```
+<br>This plot shows how the accuracy changes and the Epochs are adjusted. As it is seen in the graph, the first few trails are a bit unstable, but after a while, begins to follow a more stable rate of change. 
+<br>
+
+#### **Discussion**
+
+After this analysis, I have found that when using a neural network, increasing the number of epochs, leads to higher accuracies. I also think that while epochs may increases accuracy, there are other functions such as momentum, learning rate, function and batch size that could also heavily influence ac curacies. Computational power and time is needed to truly achieve optimized accuracy, performance and efficiency when using Neural Networks.
+<br>
+
+#### **Code Availability and Data Availability**  
+The code used in these analysis are found in the GitHub repository neural-network and [here](https://colab.research.google.com/drive/1DIJRqc_LXPS7TMEmlIutJYGvZnJvwprm?usp=sharing). The dataset can be accessed [here](https://figshare.com/articles/dataset/A_histopathological_image_dataset_for_endometrial_disease_diagnosis/7306361)
